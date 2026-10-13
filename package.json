@@ -1,0 +1,21 @@
+{
+  "name": "hsk-vocabulary-quiz",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm --workspace backend run dev",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "build": "npm --workspace backend run build && npm --workspace frontend run build",
+    "start": "npm --workspace backend run start",
+    "seed": "npm --workspace backend run seed"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "concurrently": "^9.1.2"
+  }
+}
